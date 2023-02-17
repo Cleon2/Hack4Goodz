@@ -31,7 +31,7 @@ function DisplayProfile({
             <div className="mb-4">
               <img
                 src={imgUrl}
-                className="w-40 h-40 rounded-full ml-20 mt-10"
+                className="w-40 h-40 rounded-full ml-20 mt-10 object-cover"
               />
               <h1 className="font-bold text-yellow-900 text-xl ml-28 mt-3">
                 {name}

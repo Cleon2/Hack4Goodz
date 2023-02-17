@@ -52,38 +52,37 @@ function Editing({
     };
     if (name === "") {
       isFormValid = false;
-      // alert("name");
-      errors.name = "Please enter your full name";
+      return "Please enter your full name";
     }
     if (email === "") {
       isFormValid = false;
       // alert("email");
-      errors.email = "Please enter your email";
+      return "Please enter your email";
     }
     const validRegex =
       /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/;
     if (!email.match(validRegex)) {
       isFormValid = false;
       // alert("email");
-      errors.email = "Please enter a valid email";
+      return "Please enter a valid email";
     }
     const phoneRegex = /^(6|8|9)\d{7}$/;
     if (mobileNumber === "") {
       isFormValid = false;
       // alert("no");
-      errors.mobileNumber = "Please enter your phone number";
+      return "Please enter your phone number";
     }
     if (!mobileNumber.match(phoneRegex)) {
       isFormValid = false;
       // alert("no");
-      errors.mobileNumber = "Please enter a valid phone number";
+      return "Please enter a valid phone number";
     }
     if (educationLevel == "default") {
       isFormValid = false;
       // alert("education");
-      errors.educationLevel = "Please enter your education level";
+      return "Please select your education level";
     }
-    return errors;
+    return "";
   };
 
   // const profileCollectionRef = collection(db, "profile");
@@ -93,7 +92,7 @@ function Editing({
   const submitForm = async (e) => {
     e.preventDefault();
     try {
-      handleValidation();
+      const formErr = handleValidation();
 
       if (isFormValid) {
         const inputs = profileList;
@@ -110,7 +109,7 @@ function Editing({
         setHaveProfile(true);
         alert("Profile updated!");
       } else {
-        alert("Form has errors");
+        alert(formErr);
       }
     } catch (err) {
       console.error(err.message);
