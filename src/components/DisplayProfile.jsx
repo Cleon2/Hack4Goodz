@@ -43,7 +43,7 @@ function DisplayProfile({
     border-l-[80px] border-l-red-200
     border-b-[120px] border-b-transparent relative"
           >
-            <div className="absolute flex  -ml-[290px]  :md-ml-[500px]  -mt-36">
+            <div className="absolute flex  -ml-[450px]  :md-ml-[500px]  -mt-36">
               <div className="flex flex-col ml-10 mt-10">
                 <div>
                   <h1 className=" text-yellow-900">Email</h1>

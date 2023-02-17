@@ -144,38 +144,39 @@ function Resumes({}) {
   //     }
   //   };
   return (
-    <div className="grid grid-cols-1 place-items-center mt-10 h-screen">
+    <div className="grid grid-cols-1 place-items-center mt-10 h-screen overflow-y-scroll">
       <div className="w-[800px] mx-auto rounded-lg px-20 py-4 mt-[40px]">
         {resumeData.map((e) => {
           return (
             <div className="m-10 bg-pink-200 p-10 rounded-lg shadow-lg">
-              <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl mr-1">
-                  Name:{" "}
-                </h1>
+              <img
+                src={e.img}
+                className="w-32 h-32 rounded-full object-cover mx-auto"
+              />
+              <div className="flex justify-center mt-4">
                 <h1 className="text-center text-amber-800 font-sans font-bold text-xl ml-1">
                   {e.inputs.name}
                 </h1>
               </div>
               <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl mr-1">
-                  Email:{" "}
-                </h1>
-                <h1 className="text-center text-amber-800 font-sans font-medium text-lg">
+                <h1 className="text-center text-amber-800 font-sans font-medium text-md">
                   {e.inputs.email}
                 </h1>
               </div>
-              <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl mr-1">
-                  Education Level:{" "}
-                </h1>
-                <h1 className="text-center text-amber-800 font-sans font-medium text-lg">
+              <div className="flex justify-center mt-4">
+                <h1 className="text-center text-amber-800 font-sans font-medium text-md">
                   {e.inputs.educationLevel}
                 </h1>
               </div>
-              <img src={e.img} />
+              <h1 className="text-center text-amber-800 font-bold mt-3">
+                Skills/Experiences
+              </h1>
               {e.jobs.map((job) => {
-                return <h1>{job.description}</h1>;
+                return (
+                  <h1 className="text-center bg-red-300 rounded-lg py-2 mt-2">
+                    {job.description}
+                  </h1>
+                );
               })}
             </div>
           );
