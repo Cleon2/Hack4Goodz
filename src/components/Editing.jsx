@@ -166,7 +166,7 @@ function Editing({
     <div className="bg-red-100 h-full">
       <div
         id="text input area"
-        className="bg-white w-[800px] mx-auto rounded-lg px-20 py-4 mt-[40px]"
+        className="bg-white max-w-3xl mx-auto rounded-lg px-10 py-4 mt-[40px]"
       >
         <section>
           <h2 className="font-bold">Name</h2>
@@ -177,7 +177,7 @@ function Editing({
             value={name}
             onChange={(e) => onChange(e)}
             required
-            className="bg-gray-100 w-[640px] h-10 rounded-md mt-2 rounded-md"
+            className="bg-gray-100 w-[640px] h-10 rounded-md mt-2"
           />
         </section>
         <section className="mt-2">
@@ -190,7 +190,7 @@ function Editing({
             value={email}
             onChange={(e) => onChange(e)}
             required
-            className="w-[640px] h-10  bg-gray-100 mt-2 rounded-nd"
+            className="w-[640px] h-10  bg-gray-100 mt-2 rounded-md"
           />
         </section>
         <section className="mt-2">
@@ -249,13 +249,13 @@ function Editing({
         <div>
           <button
             onClick={submitForm}
-            className="w-[650px] h-10 bg-pink-200 mt-2 rounded-md font-bold"
+            className="w-[690px] h-10 bg-rose-200 mt-2 rounded-md font-bold mx-auto"
           >
             Confirm Personal Details
           </button>
         </div>
       </div>
-      <div className="bg-white w-[800px] px-4 py-2 mx-auto mt-6 rounded-lg ">
+      <div className="bg-white max-w-3xl px-4 py-2 mx-auto mt-6 rounded-lg ">
         {" "}
         <EditingTime time={time} daysUsed={daysUsed} setTime={setTime} />
       </div>

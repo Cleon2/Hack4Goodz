@@ -135,7 +135,7 @@ function Loading() {
   }, []);
 
   return (
-    <div className="App bg-red-100 h-screen">
+    <div className="bg-red-100 min-h-screen">
       <BrowserRouter>
         <NavBar isAuth={isAuth} setAuth={setAuth} />
         <Routes>

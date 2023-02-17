@@ -116,7 +116,7 @@ function Experiences({ getInputs, setGetInputs }) {
   }, []);
 
   return (
-    <div className="bg-white w-[800px] mx-auto rounded-md mt-6 py-4">
+    <div className="bg-white max-w-3xl mx-auto rounded-md mt-6 py-4">
       <h1 className="font-bold ml-20">Experiences</h1>
       <div>
         <fieldset>
@@ -143,7 +143,7 @@ function Experiences({ getInputs, setGetInputs }) {
           />
           <button
             onClick={onSubmit}
-            className="bg-pink-200 rounded py-2 px-4 mt-2 ml-20"
+            className="bg-rose-200 rounded py-2 px-4 mt-2 ml-20"
           >
             Submit
           </button>
@@ -157,7 +157,7 @@ function Experiences({ getInputs, setGetInputs }) {
             <button
               value={input.id}
               onClick={(e) => handleDelete(e)}
-              className="bg-pink-200 rounded px-2 py-1 text-xs"
+              className="bg-rose-200 rounded px-2 py-1 text-xs"
             >
               Delete Experience
             </button>

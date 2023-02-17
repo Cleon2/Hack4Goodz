@@ -104,10 +104,10 @@ function Resumes({}) {
   //   };
   return (
     <div className="grid grid-cols-1 place-items-center mt-10 h-screen overflow-y-scroll">
-      <div className="w-[800px] mx-auto rounded-lg px-20 py-4 mt-[40px]">
+      <div className="w-lg mx-auto rounded-lg px-20 py-4">
         {resumeData.map((e) => {
           return (
-            <div className="m-10 bg-pink-200 p-10 rounded-lg shadow-lg">
+            <div className="m-10 bg-rose-200 p-10 rounded-lg shadow-lg">
               <img
                 src={e.img}
                 className="w-32 h-32 rounded-full object-cover mx-auto"

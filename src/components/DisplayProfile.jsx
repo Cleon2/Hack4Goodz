@@ -111,8 +111,8 @@ function DisplayProfile({
             Experiences
           </h1>
           {getInputs.map((input) => (
-            <div className="bg-red-200 flex flex-row ml-8">
-              <div className="bg-white w-[800px] px-4 py-4 rounded border py-2">
+            <div className="bg-red-200 flex flex-row ml-8 py-1">
+              <div className="bg-white w-[800px] px-4 py-4 rounded border">
                 <h1 className="font-bold">{input.type}</h1>
                 <p>{input.description}</p>
                 {/* <button

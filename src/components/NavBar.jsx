@@ -135,7 +135,7 @@ function NavBar({ isAuth, setAuth, updateUserId }) {
             Courses
           </Link>
           <Link
-            to="/resume"
+            to="/resumes"
             className={
               projectsHover
                 ? "underline mt-3 cursor-pointer"
@@ -144,7 +144,7 @@ function NavBar({ isAuth, setAuth, updateUserId }) {
             onMouseEnter={() => setProjectsHover(true)}
             onMouseLeave={() => setProjectsHover(false)}
           >
-            Resume
+            Resumes
           </Link>
           {isAuth && (
             <Link

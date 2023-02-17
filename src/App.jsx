@@ -37,7 +37,7 @@ function App() {
       {localStorage.getItem("isAuth") ? (
         <Loading userId={userId} />
       ) : (
-        <div className="bg-red-100 h-screen flex">
+        <div className="bg-red-100 h-screen flex min-h-full">
           <div className="m-auto">
             <button
               className="login-with-google-btn login-with-google-btn:hover login-with-google-btn:focus login-with-google-btn:active"

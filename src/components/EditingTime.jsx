@@ -142,7 +142,7 @@ function EditingTime({ time, setTime }) {
         <div>
           <button
             onClick={submitForm}
-            className="bg-pink-200 px-4 py-2 rounded-md font-bold"
+            className="bg-rose-200 px-4 py-2 rounded-md font-bold"
           >
             Confirm dialysis schedule
           </button>
