@@ -132,7 +132,7 @@ function Resumes({}) {
               </h1>
               {e.jobs.map((job) => {
                 return (
-                  <h1 className="text-center bg-red-300 rounded-lg py-2 mt-2">
+                  <h1 className="text-center bg-red-300 rounded-lg py-2 px-2 mt-2">
                     {job.description}
                   </h1>
                 );
