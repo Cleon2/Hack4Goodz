@@ -1,10 +1,27 @@
 import { React, useState, useEffect } from "react";
 import TimeBar from "./TimeBar";
 
-function DisplayProfile({ profileList, imgUrl, time, haveTime, getInputs }) {
-  const userId = localStorage.getItem("uid");
+function DisplayProfile({
+  profileList,
+  imgUrl,
+  time,
+  haveTime,
+  getInputs,
+  userId,
+}) {
+  // const userId = localStorage.getItem("uid");
 
   const { name, email, mobileNumber, educationLevel } = profileList;
+
+  // const handleDelete = async (e) => {
+  //   const id = e.target.value;
+  //   const taskDocRef = doc(db, "profile", `${userId}entries`, "jobs", id);
+  //   try {
+  //     await deleteDoc(taskDocRef);
+  //   } catch (err) {
+  //     alert(err);
+  //   }
+  // };
 
   return (
     <div>
@@ -98,6 +115,13 @@ function DisplayProfile({ profileList, imgUrl, time, haveTime, getInputs }) {
               <div className="bg-white w-[800px] px-4 py-4 rounded border py-2">
                 <h1 className="font-bold">{input.type}</h1>
                 <p>{input.description}</p>
+                {/* <button
+                  value={input.id}
+                  onClick={(e) => handleDelete(e)}
+                  className="bg-pink-200 rounded px-2 py-1 text-xs"
+                >
+                  Delete Experience
+                </button> */}
               </div>
             </div>
           ))}

@@ -6,6 +6,7 @@ import {
   uploadBytesResumable,
   getDownloadURL,
   deleteObject,
+  connectStorageEmulator,
 } from "firebase/storage";
 
 import EditingTime from "./EditingTime";
@@ -14,6 +15,7 @@ import Experiences from "./Experiences";
 function Editing({
   profileList,
   imgUrl,
+  setImgUrl,
   time,
   setHaveProfile,
   daysUsed,
@@ -126,6 +128,7 @@ function Editing({
     if (!storageRef) {
       deleteObject(storageRef);
     }
+    // console.log("asdiasd");
     const uploadTask = uploadBytesResumable(storageRef, file);
     uploadTask.on(
       "state_changed",
@@ -141,14 +144,16 @@ function Editing({
         // download url
         getDownloadURL(uploadTask.snapshot.ref).then((url) => {
           console.log(url);
+          setImgUrl(url);
         });
       }
     );
   }
 
   useEffect(() => {
-    console.log("editing");
-    console.log(time[0]);
+    // console.log("editing");
+    // console.log(time[0]);
+    // console.log(getInputs);
   });
 
   return (

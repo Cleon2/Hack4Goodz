@@ -42,9 +42,29 @@ function Experiences({ getInputs, setGetInputs }) {
         type: "",
         description: "",
       });
+      // setGetInputs(getInputs);
     } catch (err) {
       console.error(err.message);
     }
+  };
+
+  const [exInputs, setExInputs] = useState([]);
+
+  const getExperiences = () => {
+    const q = query(
+      collection(db, "profile", `${userId}`, "jobs"),
+      orderBy("type")
+    );
+    onSnapshot(q, (querySnapshot) => {
+      setExInputs(
+        querySnapshot.docs.map((doc) => ({
+          type: doc.data().type,
+          description: doc.data().description,
+          id: doc.id,
+        }))
+      );
+    });
+    console.log(exInputs);
   };
 
   //getting inputs
@@ -68,13 +88,18 @@ function Experiences({ getInputs, setGetInputs }) {
 
   const handleDelete = async (e) => {
     const id = e.target.value;
-    const taskDocRef = doc(db, "profile", `${userId}entries`, "jobs", id);
+    console.log(id);
+    const taskDocRef = doc(db, "profile", `${userId}`, "jobs", id);
     try {
       await deleteDoc(taskDocRef);
     } catch (err) {
       alert(err);
     }
   };
+
+  useEffect(() => {
+    getExperiences();
+  }, []);
 
   return (
     <div className="bg-white w-[800px] mx-auto rounded-md mt-6 py-4">
@@ -110,19 +135,21 @@ function Experiences({ getInputs, setGetInputs }) {
           </button>
         </div>
       </div>
-      {getInputs.map((input) => (
-        <div className="ml-20 mb-10 border w-[650px] px-4 py-4 rounded mt-4">
-          <h1 className="font-bold">{input.type}</h1>
-          <p>{input.description}</p>
-          <button
-            value={input.id}
-            onClick={(e) => handleDelete(e)}
-            className="bg-pink-200 rounded px-2 py-1 text-xs"
-          >
-            Delete Experience
-          </button>
-        </div>
-      ))}
+      {exInputs.map((input) => {
+        return (
+          <div className="ml-20 mb-10 border w-[650px] px-4 py-4 rounded mt-4">
+            <h1 className="font-bold">{input.type}</h1>
+            <p>{input.description}</p>
+            <button
+              value={input.id}
+              onClick={(e) => handleDelete(e)}
+              className="bg-pink-200 rounded px-2 py-1 text-xs"
+            >
+              Delete Experience
+            </button>
+          </div>
+        );
+      })}
     </div>
   );
 }

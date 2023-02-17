@@ -22,6 +22,7 @@ function Profile({
   haveProfile,
   setHaveProfile,
   imgUrl,
+  setImgUrl,
   getProfile,
   getImage,
   time,
@@ -33,8 +34,6 @@ function Profile({
   setGetInputs,
   getExperiences,
 }) {
-  
-
   //toggle editing and display pages
   const [isEditing, setIsEditing] = useState(localStorage.getItem("isEditing"));
   const toggleElements = () => {
@@ -74,6 +73,7 @@ function Profile({
           profileList={profileList}
           setProfileList={setProfileList}
           imgUrl={imgUrl}
+          setImgUrl={setImgUrl}
           time={time}
           setTime={setTime}
           setHaveProfile={setHaveProfile}
@@ -88,6 +88,7 @@ function Profile({
           setTime={setTime}
           haveTime={haveTime}
           getInputs={getInputs}
+          userId={userId}
         />
       )}
 
