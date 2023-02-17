@@ -60,7 +60,7 @@ function Loading() {
   const [imgUrl, setImgUrl] = useState("");
   const getImage = async () => {
     try {
-      getDownloadURL(pathReference).then((url) => {
+      await getDownloadURL(pathReference).then((url) => {
         setImgUrl(url);
       });
     } catch (err) {

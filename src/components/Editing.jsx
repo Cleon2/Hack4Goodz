@@ -1,5 +1,11 @@
 import { React, useState, useEffect } from "react";
-import { setDoc, deleteDoc, doc, collection } from "firebase/firestore";
+import {
+  setDoc,
+  deleteDoc,
+  doc,
+  collection,
+  updateDoc,
+} from "firebase/firestore";
 import { db, auth, storage } from "../firebase-config";
 import {
   ref,
@@ -98,6 +104,7 @@ function Editing({
             id: userId,
           },
           inputs,
+          img: imgUrl,
         });
         // window.location.pathname = "/profile";
         setHaveProfile(true);
@@ -120,7 +127,7 @@ function Editing({
   }
 
   //passing profile picture to firebase
-  function handleUpload() {
+  async function handleUpload() {
     if (!file) {
       alert("Please choose a file first!");
     }
