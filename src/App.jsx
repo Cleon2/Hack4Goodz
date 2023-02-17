@@ -33,7 +33,7 @@ function App() {
   };
 
   return (
-    <div>
+    <div className="bg-red-100 h-screen flex">
       {localStorage.getItem("isAuth") ? (
         <Loading userId={userId} />
       ) : (

@@ -77,7 +77,16 @@ function Resumes({}) {
     const idData = mappedData.map((data) => {
       return data.author.id;
     });
-    setResumeData(mappedData);
+    for (var i = 0; i < idData.length; i++) {
+      const ref = collection(db, "profile", idData[i], "jobs");
+      console.log("AWIDNAWOIDNAWONDOANDW");
+      const jobData = await getDocs(ref);
+      const temp = [];
+      jobData.forEach((e) => {
+        temp.push(e.data());
+      });
+      mappedData[i].jobs = temp;
+    }
     // setIdList(idData);
     // const arr = [];
     // for (var id of idList) {
@@ -135,46 +144,7 @@ function Resumes({}) {
   //     }
   //   };
   return (
-    <div className="grid grid-cols-1 place-items-center mt-10">
-      {/* <div className="w-[800px] mx-auto rounded-lg px-20 py-4 mt-[40px]">
-        {resumeData.map((e) => {
-          return (
-            <div className="m-10 bg-pink-200 p-10 rounded-lg shadow-lg">
-              <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl mr-1">
-                  Name:{" "}
-                </h1>
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl ml-1">
-                  {e.inputs.name}
-                </h1>
-              </div>
-              <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl mr-1">
-                  Email:{" "}
-                </h1>
-                <h1 className="text-center text-amber-800 font-sans font-medium text-lg">
-                  {e.inputs.email}
-                </h1>
-              </div>
-              <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-bold text-xl mr-1">
-                  Education Level:{" "}
-                </h1>
-                <h1 className="text-center text-amber-800 font-sans font-medium text-lg">
-                  {e.inputs.educationLevel}
-                </h1>
-              </div>
-            </div>
-          );
-        })}
-        {imgList.map((e) => {
-          return (
-            <div>
-              <img src={e} />
-            </div>
-          );
-        })}
-      </div> */}
+    <div className="grid grid-cols-1 place-items-center mt-10 h-screen">
       <div className="w-[800px] mx-auto rounded-lg px-20 py-4 mt-[40px]">
         {resumeData.map((e) => {
           return (
@@ -204,6 +174,9 @@ function Resumes({}) {
                 </h1>
               </div>
               <img src={e.img} />
+              {e.jobs.map((job) => {
+                return <h1>{job.description}</h1>;
+              })}
             </div>
           );
         })}
