@@ -16,50 +16,9 @@ import { db, storage } from "../firebase-config";
 import { getDownloadURL, ref } from "firebase/storage";
 
 function Resumes({}) {
-  //   const [tempData, setTempData] = useState([]);
   const [resumeData, setResumeData] = useState([]);
   const [idList, setIdList] = useState([]);
   const [imgList, setImgList] = useState([]);
-  //   async function takeData() {
-  //     const colRef = collection(db, "profile");
-  //     const imgRef = ref(storage);
-  //     const data = await getDocs(colRef);
-  //     data.docs.map(async (doc) => {
-  //       const temp = await takeNestedData(doc.data().author.id);
-  //       const temp2 = await takeMoreNestedData(doc.data().author.id);
-  //       console.log("ASDAASDAASDAASDAASDAASDAASDAASDAASDAASDA");
-  //       console.log(temp2.time);
-  //       console.log(doc.data().inputs);
-  //       console.log(temp);
-  //       console.log("ASDAASDAASDAASDAASDAASDAASDAASDAASDAASDA");
-  //       resumeData.push([temp2.time, doc.data().inputs, temp]);
-  //       const tempArr = resumeData;
-  //       setResumeData(tempArr);
-  //       //   console.log(tempArr);
-  //       console.log(resumeData);
-  //       setTempData(resumeData);
-  //     });
-  //     console.log("000000000000000000000000000000000000");
-  //     console.log(resumeData);
-  //     console.log(tempData);
-  //   }
-
-  //   async function takeNestedData(id) {
-  //     const colRef = collection(db, "profile", `${id}`, "jobs");
-  //     const data = await getDocs(colRef);
-  //     return data.docs.map((doc) => {
-  //       return doc.data();
-  //     });
-  //   }
-
-  //   async function takeMoreNestedData(id) {
-  //     const colRef = doc(db, "profile", `${id}`, "time", "schedule");
-  //     const data = await getDoc(colRef);
-  //     if (!data.data()) {
-  //       return [];
-  //     }
-  //     return data.data();
-  //   }
 
   const zip = (a, b) => a.map((k, i) => [k, b[i]]);
 
