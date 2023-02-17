@@ -159,7 +159,7 @@ function Resumes({}) {
                 </h1>
               </div>
               <div className="flex justify-center">
-                <h1 className="text-center text-amber-800 font-sans font-medium text-md">
+                <h1 className="text-center text-amber-800 font-sans font-medium text-md italic">
                   {e.inputs.email}
                 </h1>
               </div>
