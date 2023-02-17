@@ -36,8 +36,8 @@ function Design() {
   ];
 
   return (
-    <div className="bg-pink-100">
-      <div className="p-4 flex flex-row flex-wrap flex-col-3 gap-20 w-[1400px] mx-auto mt-20">
+    <div className="bg-red-100">
+      <div className="p-4 flex flex-row flex-wrap flex-col-3 gap-20 w-[1400px] mx-auto mt-20 justify-center">
         <DesignCard
           image={video}
           link={link[0]}

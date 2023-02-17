@@ -172,7 +172,7 @@ function Loading() {
               />
             }
           />
-          <Route path="/newpage" element={<NewPage />} />
+          <Route path="/it" element={<NewPage />} />
           <Route path="/design" element={<Design />} />
           <Route path="/Data" element={<Data />} />
         </Routes>
